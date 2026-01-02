@@ -1,0 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   t_list.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/02 11:51:27 by faeljedd          #+#    #+#             */
+/*   Updated: 2026/01/02 15:21:11 by faeljedd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+t_list	*ft_lstnew(int content)
+{
+	t_list	*node;
+
+	node = malloc (sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node ->content = content;
+	node ->next = NULL;
+	return (node);
+}
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last;
+
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last->next = new;
+}
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*last;
+
+	if (lst == NULL)
+		return (NULL);
+	last = lst;
+	while (last != NULL)
+	{
+		if (last->next == NULL)
+			return (last);
+		last = last->next;
+	}
+	return (last);
+}

@@ -6,35 +6,11 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/02 18:36:00 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/03 21:00:44 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
-
-int is_valid (char *str)
-{
-	int i;
-
-	i = 1;
-	while (str[i])
-	{
-		if (str[i] == '+' || str[i] == '-')
-			return (0);
-		i++;
-	}
-	i = 0;
-	if (str[0] == '+' || str[0] == '-')
-		i++;
-	while (str[i])
-	{
-		if (str[i] > '9' || str[i] < '0' || str[i] == 9)
-			return (0);
-		i++;
-	}
-	return (1);
-}
 
 void ft_check (int argc, char **argv)
 {
@@ -68,6 +44,45 @@ void not_dup (t_list *lst, int content)
 			lst = lst->next;
 	}
 }
+void fill_stack (char *str, t_list **stack_a)
+{
+	char **split;
+	char i;
+	char j;
+
+	i = 0;
+	split = ft_split (str, ' ');
+	if (split[0] == NULL)
+		ft_error_exit ();
+	j = 0;
+	while (split[j])
+	{
+		if (i == 1 && j == 0)
+			*stack_a = ft_lstnew (ft_atoi (split[j]));
+		else
+		{
+			not_dup (*stack_a, ft_atoi (split[j]));
+			ft_lstadd_back (stack_a, ft_lstnew (ft_atoi (split[j])));
+		}
+		j++;
+	}
+	i++;
+}
+
+t_list *init_stack (int argc, char **argv)
+{
+	t_list *stack_a;
+	int i;
+
+	stack_a = NULL;
+	i = 1;
+	while (i < argc )
+	{
+		fill_stack (argv[i], &stack_a);
+		i++;
+	}
+	return (stack_a);
+}
 
 int main (int argc, char **argv)
 {
@@ -75,34 +90,40 @@ int main (int argc, char **argv)
 	int j;
 	char **split;
 	t_list *stack_a;
-	int content;
+	t_list *stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	i = 1;
 	if (argc == 1)
 		return (0);
 	ft_check(argc, argv);
-	while (argv[i])
-	{
-		split = ft_split (argv[i], ' ');
-		j = 0;
-		while (split[j])
-		{
-			content = ft_atoi (split[j]);
-			if (i == 0)
-				stack_a = ft_lstnew (content);
-			else
-			{
-				not_dup (stack_a, content);
-				ft_lstadd_back (&stack_a, ft_lstnew (content));
-			}
-			j++;
-		}
-		i++;
-	}
+	stack_a = init_stack (argc, argv);
+	// while (argv[i])
+	// {
+	// 	split = ft_split (argv[i], ' ');
+	// 	if (split[0] == NULL)
+	// 		ft_error_exit ();
+	// 	j = 0;
+	// 	while (split[j])
+	// 	{
+	// 		if (i == 1 && j == 0)
+	// 			stack_a = ft_lstnew (ft_atoi (split[j]));
+	// 		else
+	// 		{
+	// 			not_dup (stack_a, ft_atoi (split[j]));
+	// 			ft_lstadd_back (&stack_a, ft_lstnew (ft_atoi (split[j])));
+	// 		}
+	// 		j++;
+	// 	}
+	// 	i++;
+	// }
+			ra(&stack_a);
 			while (stack_a)
 			{
-			printf ("%d\n", stack_a->content);
+			printf ("stack -->> %d\n", stack_a->content);
 			stack_a = stack_a->next;
 			}
+
 			write (1, "success\n", 7);
 }

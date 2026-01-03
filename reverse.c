@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_exit.c                                    :+:      :+:    :+:   */
+/*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 10:23:36 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/03 15:21:56 by faeljedd         ###   ########.fr       */
+/*   Created: 2026/01/03 21:17:09 by faeljedd          #+#    #+#             */
+/*   Updated: 2026/01/03 21:42:32 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_error_exit (void)
+static void ft_reverse_a (t_list **lst)
 {
-	write (2 ,"Error\n", 6);
-	exit(1);
+	
 }

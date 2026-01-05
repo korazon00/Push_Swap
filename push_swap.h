@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 10:47:44 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/03 21:06:34 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/05 22:34:36 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 typedef struct s_list
 {
+	size_t				index;
 	int				content;
 	struct s_list	*next;
 }					t_list;
@@ -35,6 +36,7 @@ void ft_error_exit (void);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 int is_valid (char *str);
 
 void sa(t_list *lst);
@@ -43,6 +45,16 @@ void ss (t_list *lst1, t_list *lst2);
 void ra (t_list **lst);
 void rb (t_list **lst);
 void rr (t_list **lst1, t_list **lst2);
+void ra (t_list **lst);
+void rb (t_list **lst);
+void rra (t_list **lst);
+void rrb (t_list **lst);
+void rrr(t_list **lst1, t_list **lst2);
+void pa(t_list **a, t_list **b);
+void pb(t_list **b, t_list **a);
+void	ft_sort_3 (t_list **lst);
+void	ft_sort_5 (t_list **lst);
+
 
 
 #endif

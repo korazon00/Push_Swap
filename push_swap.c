@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/03 21:00:44 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/05 22:58:08 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void not_dup (t_list *lst, int content)
 void fill_stack (char *str, t_list **stack_a)
 {
 	char **split;
-	char i;
-	char j;
+	int i;
+	int  j;
 
 	i = 0;
 	split = ft_split (str, ' ');
@@ -87,8 +87,6 @@ t_list *init_stack (int argc, char **argv)
 int main (int argc, char **argv)
 {
 	int i;
-	int j;
-	char **split;
 	t_list *stack_a;
 	t_list *stack_b;
 
@@ -118,7 +116,7 @@ int main (int argc, char **argv)
 	// 	}
 	// 	i++;
 	// }
-			ra(&stack_a);
+			ft_sort_5 (&stack_a);
 			while (stack_a)
 			{
 			printf ("stack -->> %d\n", stack_a->content);

@@ -118,7 +118,7 @@ int main (int argc, char **argv)
 	// 	}
 	// 	i++;
 	// }
-			ra(&stack_a);
+			ft_reverse (&stack_a);
 			while (stack_a)
 			{
 			printf ("stack -->> %d\n", stack_a->content);

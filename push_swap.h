@@ -43,6 +43,10 @@ void ss (t_list *lst1, t_list *lst2);
 void ra (t_list **lst);
 void rb (t_list **lst);
 void rr (t_list **lst1, t_list **lst2);
+void ra (t_list **lst);
+void rb (t_list **lst);
+void rrr (t_list **lst1, t_list lst2);
+
 
 
 #endif

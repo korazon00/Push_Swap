@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/06 14:55:20 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:40:48 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void ft_check (int argc, char **argv)
 		}
 		i++;
 	}
-	// return (split);
 }
 
 void not_dup (t_list *lst, int content)		
@@ -97,32 +96,15 @@ int main (int argc, char **argv)
 		return (0);
 	ft_check(argc, argv);
 	stack_a = init_stack (argc, argv);
-	// while (argv[i])
-	// {
-	// 	split = ft_split (argv[i], ' ');
-	// 	if (split[0] == NULL)
-	// 		ft_error_exit ();
-	// 	j = 0;
-	// 	while (split[j])
-	// 	{
-	// 		if (i == 1 && j == 0)
-	// 			stack_a = ft_lstnew (ft_atoi (split[j]));
-	// 		else
-	// 		{
-	// 			not_dup (stack_a, ft_atoi (split[j]));
-	// 			ft_lstadd_back (&stack_a, ft_lstnew (ft_atoi (split[j])));
-	// 		}
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
+	if (argc == 4)
+		ft_sort_3 (&stack_a);
+	if (argc == 6)
+		ft_sort_5 (&stack_a, &stack_b);
+			// while (stack_a)
+			// {
+			// printf ("stack -->> %d\n", stack_a->content);
+			// stack_a = stack_a->next;
+			// }
 
-			ft_reverse (&stack_a);
-			while (stack_a)
-			{
-			printf ("stack -->> %d\n", stack_a->content);
-			stack_a = stack_a->next;
-			}
-
-			write (1, "success\n", 7);
+			// write (1, "success\n", 7);
 }

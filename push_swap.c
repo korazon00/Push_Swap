@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/05 22:58:08 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:55:20 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,8 @@ int main (int argc, char **argv)
 	// 	}
 	// 	i++;
 	// }
-			ft_sort_5 (&stack_a);
+
+			ft_reverse (&stack_a);
 			while (stack_a)
 			{
 			printf ("stack -->> %d\n", stack_a->content);

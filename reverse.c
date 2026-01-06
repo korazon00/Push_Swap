@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 21:17:09 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/05 15:15:09 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:58:16 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void rrb (t_list **lst)
     ft_reverse (lst);
     write (1, "rrb\n", 4);
 }
+
 void rrr(t_list **lst1, t_list **lst2)
 {
     ft_reverse (lst1);

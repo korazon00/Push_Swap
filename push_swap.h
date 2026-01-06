@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 10:47:44 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/05 22:34:36 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:55:59 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void rb (t_list **lst);
 void rr (t_list **lst1, t_list **lst2);
 void ra (t_list **lst);
 void rb (t_list **lst);
+
 void rra (t_list **lst);
 void rrb (t_list **lst);
 void rrr(t_list **lst1, t_list **lst2);

@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_atoi.c	ft_strlcat.c	push_swap.c	swap.c \
 		ft_error_exit.c	ft_strlen.c	reverse.c	t_list.c \
-			ft_split.c	push.c	rotate.c	ft_sort_3.c		ft_sort_5.c\
+			ft_split.c	push.c	rotate.c	ft_sort_3.c		ft_sort_5.c	ft_sort_all.c\
 
 OBJ = $(SRC:%.c=%.o)
 

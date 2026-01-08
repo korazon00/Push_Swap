@@ -6,13 +6,13 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:28:47 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/06 19:21:42 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/08 00:44:53 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_index (t_list **lst)
+void ft_index (t_list **lst)
 {
 	t_list *node;
 	size_t i;

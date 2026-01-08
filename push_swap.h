@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 10:47:44 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/06 16:25:21 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/08 00:45:26 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 
 typedef struct s_list
 {
-	size_t				index;
+	size_t			cost;
+	struct s_list	*target;
+	size_t			index;
 	int				content;
 	struct s_list	*next;
 }					t_list;
@@ -54,9 +56,12 @@ void rrb (t_list **lst);
 void rrr(t_list **lst1, t_list **lst2);
 void pa(t_list **a, t_list **b);
 void pb(t_list **b, t_list **a);
+
+void ft_index (t_list **lst);
+
 void	ft_sort_3 (t_list **lst);
 void	ft_sort_5 (t_list **stack_a, t_list **stack_b);
-
+void	ft_sort_all (t_list **stack_a, t_list **stack_b);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 15:07:11 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/03 17:20:16 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:02:53 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,52 @@ int is_valid (char *str)
 		i++;
 	}
 	return (1);
+}
+
+t_list	*ft_best_cost (t_list **stack_a)
+{
+	t_list *node;
+	t_list *best;
+	size_t	tmp;
+
+	tmp = 2147483647;
+	node = *stack_a;
+	while (node)
+	{
+		if (node->cost < tmp)
+		{
+			tmp = node->cost;
+			best = node;
+		}
+		node = node->next;
+	}
+	return (best);
+}
+
+void ft_push_the_best (t_list **stack_a, t_list **stack_b)
+{
+	t_list *node;
+	t_list *best;
+
+	node = *stack_a;
+	best = ft_best_cost (stack_a);
+	while (best != *stack_a || best->target != *stack_b)
+	{
+		if(best != *stack_a)
+		{
+			if (best->index <= (ft_lstsize (*stack_a) / 2))
+				ra (stack_a);
+			else
+				rra (stack_a);
+		}
+		if (best->target != *stack_b)
+		{
+			if (best->target->index <= (ft_lstsize (*stack_b) / 2))
+				rb (stack_b);
+			else
+				rra (stack_a);
+		}
+	}
+	if (best == *stack_a && best->target == *stack_b)
+		pb (stack_a, stack_b);
 }

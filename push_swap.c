@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/07 23:44:25 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/08 15:23:06 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ int main (int argc, char **argv)
 			while (stack_a)
 			{
 			printf ("content -->> %d\n", stack_a->content);
-			printf ("target -->> %d\n", stack_a->target->content);
 			stack_a = stack_a->next;
 			}
 

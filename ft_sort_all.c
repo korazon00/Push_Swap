@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 19:19:31 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 12:44:53 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 15:16:38 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,32 +33,40 @@ t_list	*biggest_node (t_list **lst)
 	return (tmp);
 }
 
+static t_list	*get_target_2 (t_list *a, t_list *b, t_list *target)
+{
+	int	i;
+
+	i = 0;
+	while (b)
+	{
+		if (a->content > b->content && target == NULL)
+		{
+			i = b->content;
+			target = b;
+		}
+		else if (a->content > b->content && i < b->content)
+		{
+			i = b->content;
+			target = b;
+		}
+		b = b->next;
+	}
+	return (target);
+}
+
 static void get_target (t_list **stack_a, t_list **stack_b)
 {
 	t_list *a;
 	t_list *b;
 	t_list *target;
-	int i;
 
 	a = *stack_a;	
 	while (a)
 	{
 		target = NULL;
 		b = *stack_b;
-		while (b)
-		{
-			if (a->content > b->content && target == NULL)
-			{
-				i = b->content;
-				target = b;
-			}
-			else if (a->content > b->content && i < b->content)
-			{
-				i = b->content;
-				target = b;
-			}
-			b = b->next;
-		}
+		target = get_target_2 (a, b, target);
 		if (target == NULL)
 			target = biggest_node (stack_b);
 		a->target = target;
@@ -103,7 +111,7 @@ void	ft_sort_all (t_list **stack_a, t_list **stack_b)
 		ft_index (stack_b);
 		ft_index (stack_a);
 		ft_nega_target (stack_b, stack_a);
-		ft_push_the_best_nega (stack_a, stack_b);
+		ft_pull_the_best (stack_a, stack_b);
 	}
 	ft_finish (stack_a);
 }

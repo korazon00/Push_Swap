@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 15:07:11 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 11:47:17 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 15:59:10 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
 int is_valid (char *str)
 {
 	int i;
@@ -46,8 +47,8 @@ int is_valid (char *str)
 
 t_list	*ft_best_cost (t_list **stack_a)
 {
-	t_list *node;
-	t_list *best;
+	t_list	*node;
+	t_list	*best;
 	size_t	tmp;
 
 	tmp = 2147483647;
@@ -64,10 +65,10 @@ t_list	*ft_best_cost (t_list **stack_a)
 	return (best);
 }
 
-void ft_push_the_best (t_list **stack_a, t_list **stack_b)
+void	ft_push_the_best (t_list **stack_a, t_list **stack_b)
 {
-	t_list *node;
-	t_list *best;
+	t_list	*node;
+	t_list	*best;
 
 	node = *stack_a;
 	best = ft_best_cost (stack_a);

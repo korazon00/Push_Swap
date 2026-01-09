@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 10:47:44 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 12:02:34 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 14:37:08 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_sort_5 (t_list **stack_a, t_list **stack_b);
 void	ft_sort_all (t_list **stack_a, t_list **stack_b);
 
 void	ft_nega_target (t_list **stack_a, t_list **stack_b);
-void	ft_push_the_best_nega (t_list **stack_a, t_list **stack_b);
+void	ft_pull_the_best (t_list **stack_a, t_list **stack_b);
 
 
 #endif

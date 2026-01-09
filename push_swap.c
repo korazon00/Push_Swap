@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 12:43:11 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 14:28:50 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,3 @@ int main (int argc, char **argv)
 	else
 		ft_sort_all (&stack_a, &stack_b);
 }
-

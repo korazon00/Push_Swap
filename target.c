@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:01:49 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 12:42:42 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 15:16:21 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,32 +31,39 @@ t_list *ft_min_node (t_list **lst)
 	return (tmp);
 }
 
+static t_list	*ft_nega_target_2 (t_list *a, t_list *b, t_list *target)
+{
+	int	i;
+
+	while (b)
+	{
+		if (a->content < b->content && target == NULL)
+		{
+			i = b->content;
+			target = b;
+		}
+		else if (a->content < b->content && i > b->content)
+		{
+			i = b->content;
+		target = b;
+				}
+		b = b->next;
+	}
+	return (target);
+}
+
 void	ft_nega_target (t_list **stack_a, t_list **stack_b)
 {
 	t_list *a;
 	t_list *b;
 	t_list *target;
-	int i;
 
 	a = *stack_a;	
 	while (a)
 	{
 		target = NULL;
 		b = *stack_b;
-		while (b)
-		{
-			if (a->content < b->content && target == NULL)
-			{
-				i = b->content;
-				target = b;
-			}
-			else if (a->content < b->content && i > b->content)
-			{
-				i = b->content;
-				target = b;
-			}
-			b = b->next;
-		}
+		target = ft_nega_target_2 (a, b, target);
 		if (target == NULL)
 			target = ft_min_node (stack_b);
 		a->target = target;
@@ -79,7 +86,7 @@ void ft_finish (t_list **stack_a)
 	}
 }
 
-void ft_push_the_best_nega (t_list **stack_a, t_list **stack_b)
+void ft_pull_the_best (t_list **stack_a, t_list **stack_b)
 {
 	while ((*stack_b)->target != *stack_a)
 	{

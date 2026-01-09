@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:28:47 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/08 00:44:53 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 10:43:21 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,26 @@ void	ft_sort_5(t_list **stack_a, t_list **stack_b)
 
 	if (stack_a || *stack_a)
 	{
-		ft_index (stack_a);
-		index = ft_min_num (stack_a);
-		ft_push_min (stack_a, stack_b, index);
-		ft_index (stack_a);
-		index = ft_min_num (stack_a);
-		ft_push_min (stack_a, stack_b, index);
-		ft_sort_3 (stack_a);
-		pa (stack_a, stack_b);
-		pa (stack_a, stack_b);
+		if (ft_lstsize (*stack_a) == 5)
+		{
+			ft_index (stack_a);
+			index = ft_min_num (stack_a);
+			ft_push_min (stack_a, stack_b, index);
+			ft_index (stack_a);
+			index = ft_min_num (stack_a);
+			ft_push_min (stack_a, stack_b, index);
+			ft_sort_3 (stack_a);
+			pa (stack_a, stack_b);
+			pa (stack_a, stack_b);
+		}
+		else
+		{
+			ft_index (stack_a);
+			index = ft_min_num (stack_a);
+			ft_push_min (stack_a, stack_b, index);
+			ft_sort_3 (stack_a);
+			pa (stack_a, stack_b);
+		}
 	}
 }
+

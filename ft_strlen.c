@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 15:07:11 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/08 16:02:53 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 11:47:17 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,8 @@ void ft_push_the_best (t_list **stack_a, t_list **stack_b)
 			if (best->target->index <= (ft_lstsize (*stack_b) / 2))
 				rb (stack_b);
 			else
-				rra (stack_a);
+				rrb (stack_b);
 		}
 	}
-	if (best == *stack_a && best->target == *stack_b)
 		pb (stack_a, stack_b);
 }

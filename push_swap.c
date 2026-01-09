@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/08 15:23:06 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:43:11 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,19 +96,15 @@ int main (int argc, char **argv)
 		return (0);
 	ft_check(argc, argv);
 	stack_a = init_stack (argc, argv);
-	if (argc == 4)
+	if (argc == 2)
+		return (0);
+	else if (argc == 3)
+		ft_sort_2 (&stack_a);
+	else if (argc == 4)
 		ft_sort_3 (&stack_a);
-	if (argc == 6)
+	else if (argc == 6 || argc == 5)
 		ft_sort_5 (&stack_a, &stack_b);
-
-
-	ft_sort_all (&stack_a, &stack_b);
-
-			while (stack_a)
-			{
-			printf ("content -->> %d\n", stack_a->content);
-			stack_a = stack_a->next;
-			}
-
-			write (1, "success\n", 7);
+	else
+		ft_sort_all (&stack_a, &stack_b);
 }
+

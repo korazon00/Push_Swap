@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 19:19:31 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/08 16:25:28 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:44:53 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,9 @@ static void ft_cost (t_list **stack_a, t_list **stack_b)
 
 void	ft_sort_all (t_list **stack_a, t_list **stack_b)
 {
-	// t_list	*best;
-	t_list *node = *stack_a;
-
 	pb (stack_a, stack_b); 
 	pb (stack_a, stack_b);
-	while (ft_lstsize (*stack_a) > 3)
+	while (ft_lstsize (*stack_a) != 3)
 	{
 		ft_index (stack_a);
 		ft_index (stack_b);
@@ -101,16 +98,12 @@ void	ft_sort_all (t_list **stack_a, t_list **stack_b)
 		ft_push_the_best (stack_a, stack_b);
 	}
 	ft_sort_3 (stack_a);
-	node = *stack_b;
-	while (node)
+	while (ft_lstsize (*stack_b))
 	{
 		ft_index (stack_b);
 		ft_index (stack_a);
 		ft_nega_target (stack_b, stack_a);
-		ft_cost (stack_a, stack_b);
-		ft_push_the_best (stack_a, stack_b);
-		node = node->next;
+		ft_push_the_best_nega (stack_a, stack_b);
 	}
-	
-
+	ft_finish (stack_a);
 }

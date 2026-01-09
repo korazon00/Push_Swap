@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 10:47:44 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/08 16:24:53 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:02:34 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,16 @@ void ft_index (t_list **lst);
 t_list *ft_best_cost (t_list **stack_a);
 void ft_push_the_best (t_list **stack_a, t_list **stack_b);
 t_list	*biggest_node (t_list **lst);
+t_list *ft_min_node (t_list **lst);
+void ft_finish (t_list **stack_a);
 
+void	ft_sort_2 (t_list **stack_a);
 void	ft_sort_3 (t_list **lst);
 void	ft_sort_5 (t_list **stack_a, t_list **stack_b);
 void	ft_sort_all (t_list **stack_a, t_list **stack_b);
 
 void	ft_nega_target (t_list **stack_a, t_list **stack_b);
+void	ft_push_the_best_nega (t_list **stack_a, t_list **stack_b);
 
 
 #endif

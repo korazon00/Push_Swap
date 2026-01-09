@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:29 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/05 20:26:58 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/09 11:00:29 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ static void	ft_sort_help(int a, int b, int c, t_list **lst)
 		else
 			rra (lst);
 	}
+}
+void ft_sort_2 (t_list **stack_a)
+{
+	if ((*stack_a)->content > (*stack_a)->next->content)
+		ra (stack_a);
 }
 
 void	ft_sort_3(t_list **lst)

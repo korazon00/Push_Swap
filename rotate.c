@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:47:32 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/03 21:14:45 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 11:29:59 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void rb (t_list **lst)
 
 void rr (t_list **lst1, t_list **lst2)
 {
-	ra (lst1);
-	rb (lst2);
+	ft_rotate_a (lst1);
+	ft_rotate_b (lst2);
 	write (1, "rr\n", 3);
 }

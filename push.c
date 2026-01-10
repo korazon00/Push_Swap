@@ -6,13 +6,13 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 15:16:10 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/06 19:17:21 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:14:12 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_push (t_list **dest, t_list **src)
+static void	ft_push (t_list **dest, t_list **src)
 {
 	t_list	*node;
 	if (src || *src)
@@ -24,13 +24,13 @@ static void ft_push (t_list **dest, t_list **src)
 	}
 }
 
-void pa(t_list **a, t_list **b)
+void	pa(t_list **a, t_list **b)
 {
 	ft_push (a, b);
 	write (1, "pa\n", 3);
 }
 
-void pb(t_list **a, t_list **b)
+void	pb(t_list **a, t_list **b)
 {
 	ft_push (b, a);
 	write (1, "pb\n", 3);

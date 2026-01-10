@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 19:19:31 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 13:30:37 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:18:08 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ static t_list	*get_target_2 (t_list *a, t_list *b, t_list *target)
 	return (target);
 }
 
-static void get_target (t_list **stack_a, t_list **stack_b)
+static void	get_target (t_list **stack_a, t_list **stack_b)
 {
-	t_list *a;
-	t_list *b;
-	t_list *target;
+	t_list	*a;
+	t_list	*b;
+	t_list	*target;
 
 	a = *stack_a;	
 	while (a)
@@ -82,24 +82,9 @@ static void ft_cost (t_list **stack_a, t_list **stack_b)
 	while (node)
 	{
 		if ((node->index <= ft_lstsize (*stack_a) / 2) && (node->target->index <= ft_lstsize (*stack_b) / 2))
-		{
-			{
 				ft_ultimate_cost_1 (node);
-				// if (node->index >= node->target->index)
-				// 	node->cost = node->index;
-				// else
-				// 	node->cost = node->target->index;
-			}
-		}
 		else if ((node->index > ft_lstsize (*stack_a) / 2) && (node->target->index > ft_lstsize (*stack_b) / 2))
-		{
 			ft_ultimate_cost_2 (stack_a, stack_b, node);
-			// if ((ft_lstsize (*stack_a) - node->index) >= (ft_lstsize (*stack_b) - node->target->index))
-			// 	node->cost = (ft_lstsize (*stack_a) - node->index);
-			// else
-			// 	node->cost = (ft_lstsize (*stack_b) - node->target->index);
-		}
-
 		else
 		{
 			if (node->index <= ft_lstsize (*stack_a) / 2)

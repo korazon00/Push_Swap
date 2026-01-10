@@ -6,14 +6,14 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:23:36 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 14:27:51 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:20:48 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_error_exit (void)
+void	ft_error_exit(void)
 {
-	write (2 ,"Error\n", 6);
-	exit(1);
+	write(2, "Error\n", 6);
+	exit (1);
 }

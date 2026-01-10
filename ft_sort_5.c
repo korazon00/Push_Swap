@@ -6,16 +6,16 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:28:47 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 14:30:51 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:23:30 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_index (t_list **lst)
+void	ft_index(t_list **lst)
 {
-	t_list *node;
-	size_t i;
+	t_list	*node;
+	size_t	i;
 
 	i = 0;
 	node = *lst;
@@ -27,15 +27,14 @@ void ft_index (t_list **lst)
 	}
 }
 
-static size_t ft_min_num (t_list **lst)
+static size_t	ft_min_num(t_list **lst)
 {
-	t_list *node;
-	t_list *tmp;
-	size_t index;
+	t_list	*node;
+	t_list	*tmp;
+	size_t	index;
 
 	node = *lst;
 	tmp = *lst;
-
 	while (node)
 	{
 		if (node->content <= tmp->content)
@@ -48,9 +47,9 @@ static size_t ft_min_num (t_list **lst)
 	return (index);
 }
 
-static void ft_push_min(t_list **stack_a, t_list **stack_b, size_t index)
+static void	ft_push_min(t_list **stack_a, t_list **stack_b, size_t index)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = *stack_a;
 	while (node)
@@ -58,7 +57,7 @@ static void ft_push_min(t_list **stack_a, t_list **stack_b, size_t index)
 		if (node->index == index)
 		{
 			while ((*stack_a)->index != index)
-			{			
+			{
 				if (index <= (ft_lstsize(*stack_a) / 2))
 					ra (stack_a);
 				else
@@ -67,10 +66,10 @@ static void ft_push_min(t_list **stack_a, t_list **stack_b, size_t index)
 			if ((*stack_a)->index == index)
 			{
 				pb (stack_a, stack_b);
-				return;
+				return ;
 			}
 		}
-	node = node->next;
+		node = node->next;
 	}
 }
 

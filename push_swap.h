@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 10:47:44 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 13:31:15 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:11:40 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,39 +30,39 @@ typedef struct s_list
 
 
 char	**ft_split(char const *s, char c);
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
-void ft_error_exit (void);
+void	ft_error_exit (void);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 size_t	ft_lstsize(t_list *lst);
-int is_valid (char *str);
+int		is_valid (char *str);
 
-void sa(t_list *lst);
-void sb(t_list *lst);
-void ss (t_list *lst1, t_list *lst2);
-void ra (t_list **lst);
-void rb (t_list **lst);
-void rr (t_list **lst1, t_list **lst2);
-void ra (t_list **lst);
-void rb (t_list **lst);
+void	sa(t_list *lst);
+void	sb(t_list *lst);
+void	ss (t_list *lst1, t_list *lst2);
+void	ra (t_list **lst);
+void	rb (t_list **lst);
+void	rr (t_list **lst1, t_list **lst2);
+void	ra (t_list **lst);
+void	rb (t_list **lst);
 
-void rra (t_list **lst);
-void rrb (t_list **lst);
-void rrr(t_list **lst1, t_list **lst2);
-void pa(t_list **a, t_list **b);
-void pb(t_list **b, t_list **a);
+void	rra (t_list **lst);
+void	rrb (t_list **lst);
+void	rrr(t_list **lst1, t_list **lst2);
+void	pa(t_list **a, t_list **b);
+void	pb(t_list **b, t_list **a);
 
-void ft_index (t_list **lst);
-t_list *ft_best_cost (t_list **stack_a);
-void ft_push_the_best (t_list **stack_a, t_list **stack_b);
+void	ft_index (t_list **lst);
+t_list	*ft_best_cost (t_list **stack_a);
+void	ft_push_the_best (t_list **stack_a, t_list **stack_b);
 t_list	*biggest_node (t_list **lst);
-t_list *ft_min_node (t_list **lst);
-void ft_finish (t_list **stack_a);
+t_list	*ft_min_node (t_list **lst);
+void	ft_finish (t_list **stack_a);
 
 void	ft_sort_2 (t_list **stack_a);
 void	ft_sort_3 (t_list **lst);

@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 11:51:27 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/09 12:06:21 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:12:41 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_list	*ft_lstlast(t_list *lst)
 size_t	ft_lstsize(t_list *lst)
 {
 	size_t		size;
-	t_list	*node;
+	t_list		*node;
 
 	node = lst;
 	size = 0;

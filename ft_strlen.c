@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 15:07:11 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 12:29:05 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:17:29 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int is_valid (char *str)
+int	is_valid (char *str)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (str[i])
@@ -43,6 +43,30 @@ int is_valid (char *str)
 		i++;
 	}
 	return (1);
+}
+
+static void	ft_ultimate_best (t_list **stack_a, t_list **stack_b, t_list *best)
+{
+	while (best != *stack_a)
+	{
+		if(best != *stack_a)
+		{
+			if (best->index <= (ft_lstsize (*stack_a) / 2))
+			{
+				if ((best->target->index <= (ft_lstsize (*stack_b) / 2)) && (best->target != *stack_b))
+					rr (stack_a, stack_b);
+				else
+					ra (stack_a);
+			}
+			else
+			{
+				if ((best->target->index > (ft_lstsize (*stack_b)) / 2) && (best->target != *stack_b))
+					rrr (stack_a, stack_b);
+				else
+					rra (stack_a);
+			}
+		}
+	}
 }
 
 t_list	*ft_best_cost (t_list **stack_a)
@@ -72,26 +96,7 @@ void	ft_push_the_best (t_list **stack_a, t_list **stack_b)
 
 	node = *stack_a;
 	best = ft_best_cost (stack_a);
-	while (best != *stack_a)
-	{
-		if(best != *stack_a)
-		{
-			if (best->index <= (ft_lstsize (*stack_a) / 2))
-			{
-				if ((best->target->index <= (ft_lstsize (*stack_b) / 2)) && (best->target != *stack_b))
-					rr (stack_a, stack_b);
-				else
-					ra (stack_a);
-			}
-			else
-			{
-				if ((best->target->index > (ft_lstsize (*stack_b)) / 2) && (best->target != *stack_b))
-					rrr (stack_a, stack_b);
-				else
-					rra (stack_a);
-			}
-		}
-	}
+	ft_ultimate_best(stack_a, stack_b, best);
 	while (best->target != *stack_b)
 	{
 		if (best->target != *stack_b)

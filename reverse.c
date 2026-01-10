@@ -6,13 +6,13 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 21:17:09 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/06 14:58:16 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:14:01 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_reverse (t_list **lst)
+static void	ft_reverse (t_list **lst)
 {
     t_list *node;
     t_list *tmp;
@@ -33,19 +33,19 @@ static void ft_reverse (t_list **lst)
     }
 }
 
-void rra (t_list **lst)
+void	rra(t_list **lst)
 {
     ft_reverse (lst);
     write (1, "rra\n", 4);
 }
 
-void rrb (t_list **lst)
+void	rrb(t_list **lst)
 {
     ft_reverse (lst);
     write (1, "rrb\n", 4);
 }
 
-void rrr(t_list **lst1, t_list **lst2)
+void	rrr(t_list **lst1, t_list **lst2)
 {
     ft_reverse (lst1);
     ft_reverse (lst2);

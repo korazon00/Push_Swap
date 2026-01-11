@@ -6,13 +6,13 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:24:33 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:13:19 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:09:42 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*ft_swap_a (t_list *lst)
+static t_list	*ft_swap_a(t_list *lst)
 {
 	int	tmp;
 
@@ -22,11 +22,10 @@ static t_list	*ft_swap_a (t_list *lst)
 		lst->content = lst->next->content;
 		lst->next->content = tmp;
 	}
-	
 	return (lst);
 }
 
-static t_list	*ft_swap_b (t_list *lst)
+static t_list	*ft_swap_b(t_list *lst)
 {
 	int	tmp;
 
@@ -44,6 +43,7 @@ void	sa(t_list *lst)
 	ft_swap_a(lst);
 	write (1, "sa\n", 3);
 }
+
 void	sb(t_list *lst)
 {
 	ft_swap_b(lst);

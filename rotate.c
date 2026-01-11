@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:47:32 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:13:41 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:11:21 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	ft_rotate_a(t_list **lst)
 {
-	t_list *last;
-	t_list *first;
-	t_list *second;
-	
+	t_list	*last;
+	t_list	*first;
+	t_list	*second;
+
 	if (lst && (*lst)->next)
 	{
 		second = (*lst)->next;
@@ -28,12 +28,13 @@ static void	ft_rotate_a(t_list **lst)
 		*lst = second;
 	}
 }
-static void ft_rotate_b(t_list **lst)
+
+static void	ft_rotate_b(t_list **lst)
 {
-	t_list *last;
-	t_list *first;
-	t_list *second;
-	
+	t_list	*last;
+	t_list	*first;
+	t_list	*second;
+
 	if (lst && (*lst)->next)
 	{
 		second = (*lst)->next;
@@ -44,6 +45,7 @@ static void ft_rotate_b(t_list **lst)
 		*lst = second;
 	}
 }
+
 void	ra(t_list **lst)
 {
 	ft_rotate_a (lst);

@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:28:47 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:23:30 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/11 12:55:04 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_sort_5(t_list **stack_a, t_list **stack_b)
 {
 	size_t	index;
 
-	if (stack_a || *stack_a)
+	if (stack_a && *stack_a)
 	{
 		if (ft_lstsize (*stack_a) == 5)
 		{

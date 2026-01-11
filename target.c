@@ -6,20 +6,19 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:01:49 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:12:25 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:07:49 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_min_node (t_list **lst)
+t_list	*ft_min_node(t_list **lst)
 {
 	t_list	*node;
 	t_list	*tmp;
 
 	node = *lst;
 	tmp = *lst;
-
 	while (node)
 	{
 		if (node->content <= tmp->content)
@@ -31,7 +30,7 @@ t_list	*ft_min_node (t_list **lst)
 	return (tmp);
 }
 
-static t_list	*ft_nega_target_2 (t_list *a, t_list *b, t_list *target)
+static t_list	*ft_nega_target_2(t_list *a, t_list *b, t_list *target)
 {
 	int	i;
 
@@ -45,20 +44,20 @@ static t_list	*ft_nega_target_2 (t_list *a, t_list *b, t_list *target)
 		else if (a->content < b->content && i > b->content)
 		{
 			i = b->content;
-		target = b;
-				}
+			target = b;
+		}
 		b = b->next;
 	}
 	return (target);
 }
 
-void	ft_nega_target (t_list **stack_a, t_list **stack_b)
+void	ft_nega_target(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*a;
 	t_list	*b;
 	t_list	*target;
 
-	a = *stack_a;	
+	a = *stack_a;
 	while (a)
 	{
 		target = NULL;
@@ -71,7 +70,7 @@ void	ft_nega_target (t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	ft_finish (t_list **stack_a)
+void	ft_finish(t_list **stack_a)
 {
 	t_list	*node;
 
@@ -86,7 +85,7 @@ void	ft_finish (t_list **stack_a)
 	}
 }
 
-void	ft_pull_the_best (t_list **stack_a, t_list **stack_b)
+void	ft_pull_the_best(t_list **stack_a, t_list **stack_b)
 {
 	while ((*stack_b)->target != *stack_a)
 	{

@@ -15,6 +15,7 @@ all : $(NAME)
 
 $(NAME): $(OBJ)
 	ar r $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(NAME) -o push_swap
 
 %.o: %.c push_swap.h
 		$(CC) $(CFLAGS) -c $< -o $@

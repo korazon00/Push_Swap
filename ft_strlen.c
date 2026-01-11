@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 15:07:11 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:17:29 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:29:12 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int	is_valid (char *str)
+int	is_valid(char *str)
 {
 	int	i;
 
@@ -45,22 +45,24 @@ int	is_valid (char *str)
 	return (1);
 }
 
-static void	ft_ultimate_best (t_list **stack_a, t_list **stack_b, t_list *best)
+static void	ft_ultimate_best(t_list **stack_a, t_list **stack_b, t_list *best)
 {
 	while (best != *stack_a)
 	{
-		if(best != *stack_a)
+		if (best != *stack_a)
 		{
 			if (best->index <= (ft_lstsize (*stack_a) / 2))
 			{
-				if ((best->target->index <= (ft_lstsize (*stack_b) / 2)) && (best->target != *stack_b))
+				if ((best->target->index <= (ft_lstsize (*stack_b) / 2))
+					&& (best->target != *stack_b))
 					rr (stack_a, stack_b);
 				else
 					ra (stack_a);
 			}
 			else
 			{
-				if ((best->target->index > (ft_lstsize (*stack_b)) / 2) && (best->target != *stack_b))
+				if ((best->target->index > (ft_lstsize (*stack_b)) / 2)
+					&& (best->target != *stack_b))
 					rrr (stack_a, stack_b);
 				else
 					rra (stack_a);
@@ -69,7 +71,7 @@ static void	ft_ultimate_best (t_list **stack_a, t_list **stack_b, t_list *best)
 	}
 }
 
-t_list	*ft_best_cost (t_list **stack_a)
+t_list	*ft_best_cost(t_list **stack_a)
 {
 	t_list	*node;
 	t_list	*best;
@@ -89,7 +91,7 @@ t_list	*ft_best_cost (t_list **stack_a)
 	return (best);
 }
 
-void	ft_push_the_best (t_list **stack_a, t_list **stack_b)
+void	ft_push_the_best(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*node;
 	t_list	*best;

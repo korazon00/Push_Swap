@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 11:51:27 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:12:41 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:09:00 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_list	*ft_lstnew(int content)
 	node ->next = NULL;
 	return (node);
 }
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
@@ -37,6 +38,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = ft_lstlast(*lst);
 	last->next = new;
 }
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*last;
@@ -52,6 +54,7 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (last);
 }
+
 size_t	ft_lstsize(t_list *lst)
 {
 	size_t		size;
@@ -65,4 +68,18 @@ size_t	ft_lstsize(t_list *lst)
 		size++;
 	}
 	return (size);
+}
+
+void	ft_free_lst(t_list **stack_a)
+{
+	t_list	*tmp;
+
+	if (!stack_a && !*stack_a)
+		return ;
+	while (*stack_a)
+	{
+		tmp = *stack_a;
+		free (*stack_a);
+		*stack_a = tmp->next;
+	}
 }

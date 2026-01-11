@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 15:16:10 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/11 13:33:33 by faeljedd         ###   ########.fr       */
+/*   Created: 2026/01/11 16:20:41 by faeljedd          #+#    #+#             */
+/*   Updated: 2026/01/11 17:59:54 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-static void	ft_push(t_list **dest, t_list **src)
+int main (int argc, char **argv)
 {
-	t_list	*node;
+	t_list *stack_a;
 
-	if (src || *src)
-	{
-		node = *dest;
-		*dest = *src;
-		*src = (*src)->next;
-		(*dest)->next = node;
-	}
-}
+	if (argc == 1)
+		return (0);
+	ft_check(argc, argv);
+	stack_a = init_stack (argc, argv);
 
-void	pa(t_list **a, t_list **b)
-{
-	ft_push(a, b);
-	write (1, "pa\n", 3);
-}
-
-void	pb(t_list **a, t_list **b)
-{
-	ft_push(b, a);
-	write (1, "pb\n", 3);
 }

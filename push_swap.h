@@ -38,6 +38,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 size_t	ft_lstsize(t_list *lst);
 void	ft_free_lst(t_list **stack_a);
 void	ft_free_exit(t_list **stack_a);
+void	split_free(char **split);
 int		ft_sorted_lst(t_list **stack_a);
 int		is_valid(char *str);
 

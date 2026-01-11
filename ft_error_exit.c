@@ -17,3 +17,16 @@ void	ft_error_exit(void)
 	write(2, "Error\n", 6);
 	exit (1);
 }
+
+void	split_free(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free (split[i]);
+		i++;
+	}
+	free (split);
+}

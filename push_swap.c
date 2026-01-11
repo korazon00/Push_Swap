@@ -39,14 +39,22 @@ void	ft_check(int argc, char **argv)
 	}
 }
 
-void	not_dup(t_list *lst, int content)
+void	not_dup(t_list **lst, int content, char **split, t_list **new_node)
 {
-	while (lst)
+	t_list	*node;
+
+	node = *lst;
+	while (node)
 	{
-		if (lst->content == content)
+		if (node->content == content)
+		{
+			free (*new_node);
+			split_free(split);
+			ft_free_lst(lst);
 			ft_error_exit();
+		}
 		else
-			lst = lst->next;
+			node = node->next;
 	}
 }
 
@@ -56,16 +64,19 @@ void	fill_stack(char *str, t_list **stack_a)
 	long	j;
 	t_list	*content;
 
-	split = ft_split (str, ' ');
-	if (split[0] == NULL)
+	split = ft_split(str, ' ');
+	if (split == NULL)
 		ft_error_exit ();
 	j = 0;
 	while (split[j])
 	{
-		content = ft_lstnew (ft_atoi (split[j]));
+		content = ft_lstnew(ft_atoi (split[j]));
 		if (!content)
-			ft_free_exit (stack_a);
-		not_dup (*stack_a, ft_atoi (split[j]));
+		{
+			split_free(split);
+			ft_free_exit(stack_a);
+		}
+		not_dup (stack_a, ft_atoi (split[j]), split, &content);
 		ft_lstadd_back (stack_a, content);
 		free (split[j]);
 		j++;

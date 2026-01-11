@@ -74,12 +74,12 @@ void	ft_free_lst(t_list **stack_a)
 {
 	t_list	*tmp;
 
-	if (!stack_a && !*stack_a)
+	if (!*stack_a)
 		return ;
 	while (*stack_a)
 	{
-		tmp = *stack_a;
+		tmp = (*stack_a)->next;
 		free (*stack_a);
-		*stack_a = tmp->next;
+		*stack_a = tmp;
 	}
 }

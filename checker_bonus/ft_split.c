@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 16:20:15 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/11 16:20:33 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:28:04 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static size_t	count_words(const char *s, char c)
 	size_t	count;
 	size_t	in_word;
 
-	in_word = 0; 
+	in_word = 0;
 	count = 0;
 	i = 0;
 	while (s[i])

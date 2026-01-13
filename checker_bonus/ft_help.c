@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 17:53:00 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/12 22:02:41 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/13 10:50:50 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,27 +81,27 @@ void	ft_check(int argc, char **argv)
 
 int	ft_check_op(char *str)
 {
-	if (ft_strcmp(str, "sa\n" == 0))
+	if (ft_strcmp(str, "sa\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "sb\n" == 0))
+	else if (ft_strcmp(str, "sb\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "ss\n" == 0))
+	else if (ft_strcmp(str, "ss\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "ra\n" == 0))
+	else if (ft_strcmp(str, "ra\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "rb\n" == 0))
+	else if (ft_strcmp(str, "rb\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "rr\n" == 0))
+	else if (ft_strcmp(str, "rr\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "rra\n" == 0))
+	else if (ft_strcmp(str, "rra\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "rrb\n" == 0))
+	else if (ft_strcmp(str, "rrb\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "rrr\n" == 0))
+	else if (ft_strcmp(str, "rrr\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "pa\n" == 0))
+	else if (ft_strcmp(str, "pa\n") == 0)
 		return (1);
-	else if (ft_strcmp(str, "pb\n" == 0))
+	else if (ft_strcmp(str, "pb\n") == 0)
 		return (1);
 	else
 		return (0);
@@ -109,40 +109,28 @@ int	ft_check_op(char *str)
 
 void	aply_op(char *str, t_list **stack_a, t_list **stack_b)
 {
-	if (ft_strcmp(str, "sa\n" == 0))
-		ft_swap(&stack_a);
-	else if (ft_strcmp(str, "sb\n" == 0))
-		ft_swap(&stack_b);
-	else if (ft_strcmp(str, "ss\n" == 0))
-		ss(stack_a, stack_b);
-	else if (ft_strcmp(str, "ra\n" == 0))
+	if (!str)
+		return ;
+	else if (!ft_strcmp(str, "sa\n"))
+		ft_swap(stack_a);
+	else if (ft_strcmp(str, "sb\n") == 0)
+		ft_swap(stack_b);
+	else if (ft_strcmp(str, "ss\n") == 0)
+		ss(*stack_a, *stack_b);
+	else if (ft_strcmp(str, "ra\n") == 0)
 		ft_rotate(stack_a);
-	else if (ft_strcmp(str, "rb\n" == 0))
+	else if (ft_strcmp(str, "rb\n") == 0)
 		ft_rotate(stack_b);
-	else if (ft_strcmp(str, "rr\n" == 0))
+	else if (ft_strcmp(str, "rr\n") == 0)
 		rr(stack_a, stack_b);
-	else if (ft_strcmp(str, "rra\n" == 0))
+	else if (ft_strcmp(str, "rra\n") == 0)
 		ft_reverse(stack_a);
-	else if (ft_strcmp(str, "rrb\n" == 0))
+	else if (ft_strcmp(str, "rrb\n") == 0)
 		ft_reverse(stack_b);
-	else if (ft_strcmp(str, "rrr\n" == 0))
+	else if (ft_strcmp(str, "rrr\n") == 0)
 		rrr(stack_a, stack_b);
-	else if (ft_strcmp(str, "pa\n" == 0))
+	else if (ft_strcmp(str, "pa\n") == 0)
 		ft_push(stack_a, stack_b);
-	else if (ft_strcmp(str, "pb\n" == 0))
+	else if (ft_strcmp(str, "pb\n") == 0)
 		ft_push(stack_b, stack_a);
-}
-
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	size_t	i;
-
-	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

@@ -6,10 +6,9 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:44:41 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/12 19:34:14 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:28:37 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "checker.h"
 
@@ -71,3 +70,14 @@ size_t	ft_lstsize(t_list *lst)
 	return (size);
 }
 
+t_list	*ft_lstnew_2(int content)
+{
+	t_list	*node;
+
+	node = malloc (sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node ->content = content;
+	node ->next = NULL;
+	return (node);
+}

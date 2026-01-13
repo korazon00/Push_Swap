@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:38:04 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/12 15:40:54 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:27:09 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,34 @@ void	ft_free_lst(t_list **stack_a)
 	}
 }
 
+void	split_free(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free (split[i]);
+		i++;
+	}
+	free (split);
+}
+
+void	free_str(t_list **stockage)
+{
+	t_list	*tmp;
+
+	if (!*stockage)
+		return ;
+	while (*stockage)
+	{
+		tmp = (*stockage)->next;
+		free ((*stockage)->str);
+		free (*stockage);
+		*stockage = tmp;
+	}
+}
+
 void	ft_free_exit(t_list **stack_a)
 {
 	t_list	*tmp;
@@ -46,17 +74,3 @@ void	ft_free_exit(t_list **stack_a)
 	}
 	exit(1);
 }
-
-void	split_free(char **split)
-{
-	int	i;
-
-	i = 0;
-	while (split[i])
-	{
-		free (split[i]);
-		i++;
-	}
-	free (split);
-}
-

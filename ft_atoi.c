@@ -6,14 +6,14 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 12:41:36 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/02 11:39:36 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/15 18:49:26 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int	ft_atoi(const char *str)
-{	
+{
 	int		sign;
 	long	result;
 	int		i;

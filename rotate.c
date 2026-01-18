@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:47:32 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/11 13:11:21 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:24:19 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	ft_rotate_b(t_list **lst)
 	t_list	*first;
 	t_list	*second;
 
-	if (lst && (*lst)->next)
+	if (lst && *lst)
 	{
 		second = (*lst)->next;
 		last = ft_lstlast(*lst);

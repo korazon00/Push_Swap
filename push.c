@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 15:16:10 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/11 13:33:33 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/13 10:02:14 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_push(t_list **dest, t_list **src)
 {
 	t_list	*node;
 
-	if (src || *src)
+	if (src && *src)
 	{
 		node = *dest;
 		*dest = *src;

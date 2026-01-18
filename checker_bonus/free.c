@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:38:04 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/13 15:27:09 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:01:14 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	split_free(char **split)
 	int	i;
 
 	i = 0;
+	if (!split)
+		return ;
 	while (split[i])
 	{
 		free (split[i]);

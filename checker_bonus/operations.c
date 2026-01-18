@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 10:40:59 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/13 15:29:09 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:22:33 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_swap(t_list **lst)
 {
 	int	tmp;
 
-	if (lst && *lst)
+	if (lst && *lst && (*lst)->next)
 	{
 		tmp = (*lst)->content;
 		(*lst)->content = (*lst)->next->content;
@@ -46,7 +46,7 @@ void	ft_reverse(t_list **lst)
 	t_list	*node;
 	t_list	*tmp;
 
-	if (lst && *lst)
+	if (lst && *lst && (*lst)->next)
 	{
 		tmp = *lst;
 		node = *lst;

@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 16:20:15 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/13 15:28:04 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:37:21 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-static char	*ft_malloc_word(const char *s, size_t start, size_t end)
+static char	*malloc_word(const char *s, size_t start, size_t end)
 {
 	char	*word;
 	size_t	i;
@@ -72,7 +72,7 @@ static size_t	fil_arr(const char *s, char c, char **arr)
 		start = i;
 		while (s[i] != c && s[i])
 			i++;
-		arr[j] = ft_malloc_word(s, start, i);
+		arr[j] = malloc_word(s, start, i);
 		if (!arr[j])
 		{
 			free_all (arr, j - 1);

@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:20:26 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/11 18:14:04 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/16 10:36:42 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_check(int argc, char **argv)
 	while (i < argc)
 	{
 		split = ft_split(argv[i], ' ');
+		if (split == NULL || split[0] == NULL)
+			return (split_free(split), ft_error_exit());
 		j = 0;
 		while (split[j])
 		{

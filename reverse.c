@@ -6,7 +6,7 @@
 /*   By: faeljedd <faeljedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 21:17:09 by faeljedd          #+#    #+#             */
-/*   Updated: 2026/01/11 13:13:39 by faeljedd         ###   ########.fr       */
+/*   Updated: 2026/01/15 16:26:25 by faeljedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	ft_reverse(t_list **lst)
 	t_list	*node;
 	t_list	*tmp;
 
-	if (lst && (*lst)->next)
+	if (lst && *lst && (*lst)->next)
 	{
 		tmp = *lst;
 		node = *lst;
